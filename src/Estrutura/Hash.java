@@ -13,13 +13,15 @@ public class Hash {                             //classe hash
     }
 
     public void inserir(Contato contato) {      //metodo inserir um contato           
-        int chave = contato.id % operador;      //posicao = resto do id / operador
-        vetor[chave].inserir(contato);          //insere o contato naquela lista
+        //int chave = contato.id % operador;      //posicao = resto do id / operador
+        vetor[contato.mes.getMes()].inserir(contato);          //insere o contato naquela lista                      ---- ver funcionamento com enum para janeiro ter um valor int associado ou switchcase (receber uma string com mes e retornar o valor int com mes)
     }
 
-    public Contato buscar(int id) {             //metodo buscar pelo id
-        return vetor[id % operador].buscar(id); //busca apenas na lista especifica
+    public Contato buscar(Contato contato) {             //metodo buscar pelo id
+        return vetor[contato.mes.getMes()].buscar(contato.nome); //busca apenas na lista especifica
     }
+
+    //metodo remover
     
     public String toString() {                  //sobrescreve o metodo toString              
         String out = "";                        //cria uma string de saida  

@@ -12,12 +12,14 @@ public class Lista {                    //classe lista
         tamanho ++;                     //incrementa o tamanho 
    }
 
-   public Contato buscar(int id) {      //metodo metodo buscar pelo codigo
+   public Contato buscar(String nome) {      //metodo metodo buscar pelo codigo
         No no = inicio;                 //vai para o inicio da lista
         while (no != null) {            //enquanto o no nao for nulo
-            if (no.info.id == id){      //se o id do no for igual ao parametro passado
+            if (no.info.nome == nome){      //se o id do no for igual ao parametro passado
                 return no.info;         //retorna a informacao do tipo id
             }
+            //else
+                //vai para um array list toda vez que encontrar
             no = no.proximo;            //vai para o proximo no     
         }
         return null;    
@@ -32,4 +34,6 @@ public class Lista {                    //classe lista
         }
         return out;                     //retorna a string
    }
+
+
 }
